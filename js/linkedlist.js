@@ -1,7 +1,7 @@
 var util = require('util')
 
 var LinkedList = function() {
-	this.head = null
+	this._head = null
 }
 
 LinkedList.prototype = {
@@ -13,12 +13,17 @@ LinkedList.prototype = {
 			next: null
 		}
 
-		if(this.head==null) {
-			console.log("added new node to head: " + JSON.stringify(this.head))
-			this.head = node
+		if(this._head==null) {
+			this._head = node
+			console.log("added new node to head: " + JSON.stringify(this))
+			console.log(this.toArray())
 		} else {
-			this.next = this.head
+			//replace head node with this one
+			tmp = this._head
+			node.next = tmp
+			this._head = node
 			console.log("inserted new node from head, new list" + JSON.stringify(this))
+			console.log(this.toArray())
 		}
 
 	},
@@ -29,30 +34,30 @@ LinkedList.prototype = {
 			next: null
 		}
 
-		if(this.head==null) {
-			console.log("added new node to head: " + JSON.stringify(this.head))
-			this.head = node
+		if(this._head==null) {
+			this._head = node
+			console.log("created new node: " + JSON.stringify(this))
 		} else {
-			current = this.head
-			//walk to the end and add
+			var current = this._head
 			while(current.next) {
 				current = current.next
 			}
-			this.head.next = node
-			console.log("added new node from head, new list" + JSON.stringify(this.head))
+			current.next = node
+			console.log("pushed new node to end:" + JSON.stringify(this))
+			console.log(this.toArray())
 		}
 
 	},
 
-
-
-	toString: function() {
-		var toPrint = this
-		console.log(toPrint.value)  //print top
-		while(toPrint.next) {
-			console.log("val: " + toPrint.value)
+	toArray: function() {
+		var result = [], i = 0
+		var toPrint = this._head
+		while(toPrint) {
+			result[i++] = toPrint.value
+			// console.log(toPrint.value)
 			toPrint = toPrint.next
 		}
+		return result
 	}
 }
 
