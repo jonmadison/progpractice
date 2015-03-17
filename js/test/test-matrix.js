@@ -1,4 +1,4 @@
-matrix = require("./matrix")
+matrix = require("../matrix")
 assert = require("assert")
 
 describe('matrix problem',function() {
@@ -7,6 +7,12 @@ describe('matrix problem',function() {
 		ordered = matrix.getOrdered(m)
 		console.log("ordered: " + ordered)
 		assert(ordered.equals([5,20,40,45,50,55,60,80,90]))
+	})
+	it('should sort a matrix\'s rows with dup entries',function(){
+		m = [[20,40,80],[5,60,40],[45,50,5]]
+		ordered = matrix.getOrdered(m)
+		console.log("ordered: " + ordered)
+		assert(ordered.equals([5,20,40,45,50,60,80]))
 	})
 })
 
