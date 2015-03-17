@@ -13,10 +13,10 @@ var getOrdered = function(m) {
 			tree.insert(m[i][j])
 		}
 	}
-	var it = tree.iterator(), item, i
+	var it = tree.iterator(), item, i = 0
 	var result = []
 	while((item = it.next()) !== null) {
-		console.log("added to result: " + item)
+		console.log(i + ": added to result: " + item)
 		result[i++] = item
 	}
 	return result
