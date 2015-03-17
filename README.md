@@ -1,2 +1,2 @@
 # progpractice
-a smattering of programming in various languages for my edification
+a smattering of programming in various languages (currently js, go, c++) for my edification
