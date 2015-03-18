@@ -1,4 +1,4 @@
-myreverse = require("./myreverse")
+myreverse = require("../myreverse")
 
 var assert = require("assert")
 

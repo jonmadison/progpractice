@@ -1,4 +1,4 @@
-bs = require('./bs')
+bs = require('../bs')
 assert = require('assert')
 
 Array.prototype.fyshuffle = function() {

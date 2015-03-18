@@ -1,4 +1,4 @@
-sorter = require("./sorter")
+sorter = require("../sorter")
 
 var assert = require("assert")
 

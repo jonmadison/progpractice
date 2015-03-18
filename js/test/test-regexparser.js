@@ -1,5 +1,5 @@
 var assert = require('assert')
-var regex = require('./regex2')
+var regex = require('../regex2')
 
 describe('regex matcher',function(){
 	it('blank string with any regex should fail',function(){
