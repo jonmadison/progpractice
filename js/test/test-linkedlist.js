@@ -9,6 +9,17 @@ describe('linked list',function() {
 		assert(list.toArray() == "5,10,15,203,30,12,11,3")
 	})
 
+	it('should reasonably handle an empty array as input',function() {
+		var list = new linkedlist.LinkedList([])
+		assert(list.toArray() == "")
+	})
+
+	it('should throw an exception if input is not an array',function(){
+		assert.throws(function(){
+			new linkedlist.LinkedList("oh snap")
+		}, Error);
+	})
+
 	it('should insert items onto the left of the list',function() {
 		var list = new linkedlist.LinkedList()
 		list.insert(5)

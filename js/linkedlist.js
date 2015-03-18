@@ -2,9 +2,12 @@ var util = require('util')
 
 var LinkedList = function(arr) {
 	this._head = null
-	console.log("new LinkedList: " + util.inspect(this))
+	// console.log("new LinkedList: " + util.inspect(this))
 	if(arr != undefined) {
-		console.log("new LinkedList from array: " + util.inspect(this))
+		if( Object.prototype.toString.call(arr) !== '[object Array]') {
+	    	throw new Error("Sorry not sorry. I require an array as input.")
+		}
+		// console.log("new LinkedList from array: " + util.inspect(this))
 
 		for(var i = 0; i < arr.length; i++) {
 			this.push(arr[i])
@@ -19,17 +22,17 @@ var _insert = function (number) {
 	}
 
 	if(this._head==null) {
-		console.log("head null, new: " + number)
+		// console.log("head null, new: " + number)
 		this._head = node
 		// console.log("added new node to head: " + util.inspect(this))
-		console.log(this.toArray())
+		// console.log(this.toArray())
 	} else {
 		//replace head node with this one
 		tmp = this._head
 		node.next = tmp
 		this._head = node
-		console.log("inserted new node from head, new list" + JSON.stringify(this))
-		console.log(this.toArray())
+		// console.log("inserted new node from head, new list" + JSON.stringify(this))
+		// console.log(this.toArray())
 	}
 }
 
@@ -42,15 +45,15 @@ var _push = function (number){
 
 	if(this._head==null) {
 		this._head = node
-		console.log("created new node: " + JSON.stringify(this))
+		// console.log("created new node: " + JSON.stringify(this))
 	} else {
 		var current = this._head
 		while(current.next) {
 			current = current.next
 		}
 		current.next = node
-		console.log("pushed new node to end:" + JSON.stringify(this))
-		console.log(this.toArray())
+		// console.log("pushed new node to end:" + JSON.stringify(this))
+		// console.log(this.toArray())
 	}
 }
 
