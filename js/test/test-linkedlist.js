@@ -18,6 +18,14 @@ describe('linked list',function() {
 		assert.throws(function(){
 			new linkedlist.LinkedList("oh snap")
 		}, Error);
+
+		assert.throws(function(){
+			new linkedlist.LinkedList(832)
+		}, Error);
+
+		assert.throws(function(){
+			new linkedlist.LinkedList({"thing":"oh snap"})
+		}, Error);
 	})
 
 	it('should insert items onto the left of the list',function() {
