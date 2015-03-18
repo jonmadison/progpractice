@@ -7,6 +7,17 @@ describe('linked list',function() {
 		var list = new linkedlist.LinkedList([5,10,15,203,30,12,11,3])
 		assert(list.toArray().length == 8)
 		assert(list.toArray() == "5,10,15,203,30,12,11,3")
+
+		//TODO: should handle any item you can stick into an array
+		// var list = new linkedlist.LinkedList([5,"sup",15,"hey homie",30,{"anew":"thing"},11,3])
+		// assert(list.toArray().length == 8)
+		// assert(list.toArray() == '5,"sup",15,"hey homie",30,{"anew":"thing"},11,3')
+	})
+
+	it('should accept null values as input',function(){
+		var list = new linkedlist.LinkedList([5,10,null,203,30,null,11,3])
+		assert(list.toArray().length == 8)
+		assert(list.toArray() == "5,10,,203,30,,11,3")		
 	})
 
 	it('should reasonably handle an empty array as input',function() {
@@ -55,6 +66,8 @@ describe('linked list',function() {
 		assert(list.contains(203) == true)
 		assert(list.contains(-3) == false)
 		assert(list.contains("yo son") == false)
+		assert(list.contains() == false)
+		assert(list.contains(null) == false)
 		assert(list.contains({"value":"this aint there"}) == false)
 	})
 })

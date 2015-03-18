@@ -15,14 +15,14 @@ var LinkedList = function(arr) {
 	}
 }
 
-var _insert = function (number) {
+var _insert = function (item) {
 	var node = {
-		value: number,
+		value: item,
 		next: null
 	}
 
 	if(this._head==null) {
-		// console.log("head null, new: " + number)
+		// console.log("head null, new: " + item)
 		this._head = node
 		// console.log("added new node to head: " + util.inspect(this))
 		// console.log(this.toArray())
@@ -37,9 +37,9 @@ var _insert = function (number) {
 }
 
 
-var _push = function (number){
+var _push = function (item){
 	var node = {
-		value: number,
+		value: item,
 		next: null
 	}
 
@@ -57,6 +57,17 @@ var _push = function (number){
 	}
 }
 
+var _contains = function(item) {
+	if(!item) return false
+	var current = this._head
+	while(current) {
+		if(item === current.value)
+		return true
+		current = current.next
+	}
+	return false
+}
+
 LinkedList.prototype = {
 	constructor: LinkedList,
 
@@ -64,11 +75,14 @@ LinkedList.prototype = {
 
 	push: _push,
 
+	contains: _contains,
+
 	toArray: function() {
 		var result = [], i = 0
 		var toPrint = this._head
 		while(toPrint) {
-			result[i++] = toPrint.value
+			result[i] = toPrint.value
+			i++
 			// console.log(toPrint.value)
 			toPrint = toPrint.next
 		}
