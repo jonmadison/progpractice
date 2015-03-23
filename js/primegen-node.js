@@ -17,7 +17,7 @@ var primeGen = function(input) {
 	inputLines = input.split("\n")
 	var numberOfCases = inputLines[0]
 	console.log("processing " + numberOfCases + " test cases")
-	for(var i = 1; i < inputLines.length; i++) {
+	for(var i = 1; i < numberOfCases; i++) {
 		printPrimes(inputLines[i].split(" "))
 		console.log()
 	}
@@ -36,7 +36,7 @@ var printPrimes = function(numberRangeArray) {
 var isPrime = function(number) {
 	if(number==1) return false
 	var numFactors = 0;
-	for(var i = 1; i < number; i++) {
+	for(var i = 1; i < Math.sqrt(number); i++) {
 		if(number % i == 0) {
 			numFactors++
 		}
