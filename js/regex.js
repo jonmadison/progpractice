@@ -7,7 +7,7 @@ var match = function(regex,input) {
 	console.log("rsplit: " + rSplit)
 	var matchedAsteriskChar = ""
 
-	//kep considering 
+	//keep considering 
 	for(; i < rSplit.length; ++i) {
 		console.log("testing : " + rSplit[i])
 		if(rSplit[i] == '.') { //auto pass
