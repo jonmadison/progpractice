@@ -14,9 +14,8 @@ var primesSieve = function(lowerRange,upperRange) {
 			primes[i*j] = 0
 		}
 	}
-	console.log(result)
-}
 
-primesSieve(1,10000000)
+	return result
+}
 
 module.exports.ps = primesSieve

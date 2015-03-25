@@ -1,4 +1,5 @@
 process.stdin.setEncoding('utf-8')
+var prime = require('./primesieve')
 
 var input = ""
 
