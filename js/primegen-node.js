@@ -20,11 +20,12 @@ var primeGen = function(input) {
 	console.log("processing " + numberOfCases + " test cases")
 	for(var i = 0; i < numberOfCases; i++) {
 		// printPrimes(inputLines[i+1].split(" "))
+		range = inputLines[i+1].split(" ");
+		prime.ps(parseInt(range[0]),parseInt(range[1]))
 
-		printPrimesSieveE(inputLines[i+1].split(" "))
+		// printPrimesSieveE(inputLines[i+1].split(" "))
 		console.log()
 	}
-	
 }
 
 var primesSieve = function(upperRange) {
@@ -76,7 +77,7 @@ var arrayOfRange = function(lower,upper) {
 }
 
 var printPrimes = function(numberRangeArray) {
-	console.log("printing primes between: " + numberRangeArray)
+	// console.log("printing primes between: " + numberRangeArray)
 	for(var i = parseInt(numberRangeArray[0]); i <= parseInt(numberRangeArray[1]); ++i) {
 		// console.log("is " + i + " prime?")
 		if(isPrime(i)) {
